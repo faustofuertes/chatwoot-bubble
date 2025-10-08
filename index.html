@@ -1,15 +1,43 @@
+<!-- Script del widget -->
 <script>
-  (function(d,t) {
-    var BASE_URL="https://crm.chatsappai.com";
-    var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=BASE_URL+"/packs/js/sdk.js";
+  (function(d, t) {
+    var BASE_URL = "https://crm.chatsappai.com";
+    var g = d.createElement(t),
+        s = d.getElementsByTagName(t)[0];
+  
+    g.src = BASE_URL + "/packs/js/sdk.js";
     g.async = true;
-    s.parentNode.insertBefore(g,s);
-    g.onload=function(){
+    s.parentNode.insertBefore(g, s);
+  
+    g.onload = function() {
       window.chatwootSDK.run({
         websiteToken: 'g6iA3oYWSePS3pu4vAB9RtFr',
         baseUrl: BASE_URL
-      })
-    }
-  })(document,"script");
-</script>
+      });
+    };
+  })(document, "script");
+  </script>
+  
+  <!-- Estilos del launcher -->
+  <style>
+  /* Oculta el ícono predeterminado del launcher */
+  .woot-widget-bubble svg {
+    display: none !important;
+  }
+  
+  /* Reemplaza con el ícono de Sofía */
+  .woot-widget-bubble::before {
+    content: "";
+    position: absolute; /* cubre todo el botón */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://i.postimg.cc/X7yr1Gqt/Sofia-1.webp");
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25); /* sombra suave */
+  }
+
+  </style>  
